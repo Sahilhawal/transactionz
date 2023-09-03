@@ -1,7 +1,7 @@
 interface props {
   date: string;
   type: string;
-  description: string;
+  description: string | null | undefined;
   amount: number;
   balance: number;
 }

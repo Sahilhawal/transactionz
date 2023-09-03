@@ -1,7 +1,7 @@
 import TransactionTableRow from "./transactionTableRow";
 
 interface props {
-  transactions: any[];
+  transactions: ITransaction[];
 }
 
 const PastTransactionSection: React.FC<props> = ({ transactions }) => {
@@ -26,7 +26,7 @@ const PastTransactionSection: React.FC<props> = ({ transactions }) => {
                 description={transaction.description}
                 amount={transaction.amount}
                 balance={transaction.balance}
-                key={transaction.actiity_id}
+                key={transaction.activity_id}
               />
             );
           })}

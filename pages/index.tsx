@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 interface props {}
 
 const LandingPage: React.FC<props> = () => {
-  const [transactions, setTransactions] = useState([]);
-  const [balance, setBalance] = useState(0);
+  const [transactions, setTransactions] = useState<ITransaction[]>([]);
+  const [balance, setBalance] = useState<number>(0);
 
   useEffect(() => {
     const fetchTransactionData = async () => {
