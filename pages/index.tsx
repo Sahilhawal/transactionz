@@ -1,6 +1,7 @@
 import CurrentBalanceHeading from "@/components/currentBalanceHeading";
 import Header from "@/components/header";
 import PastTransactionSection from "@/components/pastTransactions/pastTransactionSection";
+import { ITransaction } from "@/interfaces";
 import { fetchTransactions } from "@/services/transaction.service";
 import { useEffect, useState } from "react";
 interface props {}

@@ -1,3 +1,4 @@
+import { ITransaction, TransactionType } from "@/interfaces";
 import TransactionTableRow from "./transactionTableRow";
 
 interface props {
@@ -22,7 +23,7 @@ const PastTransactionSection: React.FC<props> = ({ transactions }) => {
             return (
               <TransactionTableRow
                 date={transaction.date}
-                type={transaction.type}
+                type={transaction.type as TransactionType}
                 description={transaction.description}
                 amount={transaction.amount}
                 balance={transaction.balance}

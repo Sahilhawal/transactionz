@@ -1,3 +1,4 @@
+import { ITransaction, TransactionType } from "@/interfaces";
 import { descriptionBuilder } from "../builder/descriptionBuilder";
 
 export default class TransactionCollection {
@@ -15,15 +16,21 @@ export default class TransactionCollection {
   }
 
   static orderByDate(transactions: ITransaction[]): ITransaction[] {
-    return transactions
-      .slice()
-      .sort((a: any, b: any) => new Date(a.date) - new Date(b.date));
+    return (
+      transactions
+        .slice()
+        //@ts-ignore
+        .sort((a: any, b: any) => new Date(a.date) - new Date(b.date))
+    );
   }
 
   static dataWithDescription(transactions: ITransaction[]): ITransaction[] {
     return transactions.map((transaction: ITransaction) => ({
       ...transaction,
-      description: descriptionBuilder(transaction.type, transaction),
+      description: descriptionBuilder(
+        transaction.type as TransactionType,
+        transaction
+      ),
     }));
   }
 

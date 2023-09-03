@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { transactions } from "@/transactionData";
 import TransactionCollection from "@/lib/collections/transactionCollections";
+import { ITransaction } from "@/interfaces";
 
 export default function handler(
   req: NextApiRequest,

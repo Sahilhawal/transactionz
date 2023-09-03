@@ -9,15 +9,15 @@ interface ISource {
 }
 
 interface IDestination {
-  type: string;
+  type?: string;
   id?: number | string | null;
   description?: string;
 }
 
-interface ITransaction {
+export interface ITransaction {
   activity_id: string;
   date: string;
-  type: TransactionType;
+  type: TransactionType | string;
   method?: string;
   amount: number;
   balance: number;
