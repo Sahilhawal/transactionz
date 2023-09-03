@@ -1,14 +1,19 @@
-export const descriptionBuilder = (transactionType: string, data: any) => {
+import { TransactionType } from "@/interfaces";
+
+export const descriptionBuilder = (
+  transactionType: TransactionType,
+  data: any
+) => {
   switch (transactionType) {
-    case "DEPOSIT":
+    case TransactionType.DEPOSIT:
       return buildDepositDescription(data);
-    case "INVESTMENT":
+    case TransactionType.INVESTMENT:
       return `Your investment in ${data["destination"]["description"]}`;
-    case "REFUND":
+    case TransactionType.REFUND:
       return `Refund from ${data["source"]["description"]}`;
-    case "TRANSFER":
+    case TransactionType.TRANSFER:
       return `Transferred to ${data["source"]["description"]}`;
-    case "WITHDRAWAL":
+    case TransactionType.WITHDRAWAL:
       return `Withdrawed from ${data["destination"]["description"]}`;
     default:
       break;

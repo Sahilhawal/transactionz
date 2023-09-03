@@ -17,7 +17,7 @@ interface IDestination {
 interface ITransaction {
   activity_id: string;
   date: string;
-  type: string;
+  type: TransactionType;
   method?: string;
   amount: number;
   balance: number;
@@ -25,4 +25,12 @@ interface ITransaction {
   source?: ISource;
   destination?: IDestination;
   description?: string;
+}
+
+export enum TransactionType {
+  DEPOSIT = "DEPOSIT",
+  INVESTMENT = "INVESTMENT",
+  REFUND = "REFUND",
+  TRANSFER = "TRANSFER",
+  WITHDRAWAL = "WITHDRAWAL",
 }
